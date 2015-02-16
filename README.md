@@ -438,11 +438,11 @@ $router = new Router(null, $dispatcher);
 
 # Installation
 
-- SeaLion is a Composer package available on Packagist and can be installed by running
+SeaLion is a Composer package available on Packagist and can be installed by running
 
-    ```
-    composer require toobo/sealion:~0.1
-    ```
+```
+composer require toobo/sealion:~0.1
+```
 
 
 # Unit Tests

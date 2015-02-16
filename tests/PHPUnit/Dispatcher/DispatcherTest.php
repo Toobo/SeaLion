@@ -18,7 +18,6 @@ use Toobo\SeaLion\Router;
  */
 class DispatcherTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testErrorConstants()
     {
         $dispatcher = new Dispatcher();

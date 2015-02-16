@@ -20,7 +20,6 @@ use Toobo\SeaLion\Matcher\Matcher;
  */
 class RouteTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var \Toobo\SeaLion\Matcher\MatcherInterface
      */

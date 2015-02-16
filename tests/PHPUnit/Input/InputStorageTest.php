@@ -18,7 +18,6 @@ use Toobo\SeaLion\Input\InputStorage;
  */
 class InputStorageTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testParse()
     {
         $argv = [
@@ -53,7 +52,7 @@ class InputStorageTest extends \PHPUnit_Framework_TestCase
                 'a_empty_flag'  => '',
                 'a_text_flag'   => 'I_am_a_flag',
                 'a_quoted_flag' => 'I am a flag',
-            ]
+            ],
         ];
         assertSame('the:command', $storage['command']);
         assertSame($expected['arguments'], $storage['arguments']);

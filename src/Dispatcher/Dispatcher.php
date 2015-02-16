@@ -19,7 +19,6 @@ use Toobo\SeaLion\Input\InputInterface;
  */
 class Dispatcher implements DispatcherInterface
 {
-
     /**
      * @param  string                              $command
      * @param  mixed                               $handler

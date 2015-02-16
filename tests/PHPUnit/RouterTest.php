@@ -18,9 +18,8 @@ use Toobo\SeaLion\Router;
  */
 class RouterTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
-     * @param null|array $parse
+     * @param  null|array                          $parse
      * @return \Toobo\SeaLion\Input\InputInterface
      */
     private function getInput($parse = null)
@@ -139,7 +138,7 @@ class RouterTest extends \PHPUnit_Framework_TestCase
         $matcher = $this->getMatcher();
         $matched = [
             [Router::ARGUMENTS, Router::OPTIONS],
-            [Router::ARGUMENTS, Router::FLAGS]
+            [Router::ARGUMENTS, Router::FLAGS],
         ];
         $matcher->method('match')
                 ->with($route, $input)

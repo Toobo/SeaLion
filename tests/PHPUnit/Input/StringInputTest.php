@@ -17,7 +17,6 @@ use Toobo\SeaLion\Input\StringInput;
  */
 class StringInputTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testParse()
     {
         $input = new StringInput('bar -foo --yes -bar="bar" arg');

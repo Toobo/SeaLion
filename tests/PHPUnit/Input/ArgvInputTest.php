@@ -17,7 +17,6 @@ use Toobo\SeaLion\Input\ArgvInput;
  */
 class ArgvInputTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testParse()
     {
         $input = new ArgvInput(['bar']);

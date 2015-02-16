@@ -18,7 +18,6 @@ use Toobo\SeaLion\Route\RouteFactory;
  */
 class RouteFactoryTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testFactoryImplementsContract()
     {
         $factory = new RouteFactory();

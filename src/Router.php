@@ -27,7 +27,6 @@ use InvalidArgumentException;
  */
 class Router
 {
-
     const COMMAND             = 'command';
     const ARGUMENTS           = 'arguments';
     const OPTIONS             = 'options';
@@ -86,28 +85,28 @@ class Router
         RouteFactoryInterface $routeFactory = null
     ) {
         $this->routes = [];
-        $this->input = $input ? : new ArgvInput();
-        $this->dispatcher = $dispatcher ? : new Dispatcher();
-        $this->matcher = $matcher ? : new Matcher();
-        $this->routeFactory = $routeFactory ? : new RouteFactory();
+        $this->input = $input ?: new ArgvInput();
+        $this->dispatcher = $dispatcher ?: new Dispatcher();
+        $this->matcher = $matcher ?: new Matcher();
+        $this->routeFactory = $routeFactory ?: new RouteFactory();
     }
 
     /**
      * Adds a command route and assign to it an handler.
      * Return just created route to allow adding constraints to it.
      *
-     * @param  string $command
-     * @param  mixed  $handler
+     * @param  string                              $command
+     * @param  mixed                               $handler
      * @return \Toobo\SeaLion\Route\RouteInterface
      */
     public function addCommand($command, $handler)
     {
-        if ( ! is_string($command) || empty($command)) {
+        if (! is_string($command) || empty($command)) {
             throw new InvalidArgumentException('Route command name must be in a string.');
         }
         /** @var \Toobo\SeaLion\Route\RouteInterface $route */
         $route = $this->routeFactory->factory($this->matcher);
-        if ( ! isset($this->routes[$command])) {
+        if (! isset($this->routes[$command])) {
             $this->routes[$command] = new SplQueue();
         }
         $this->routes[$command]->enqueue([$route, $handler]);
@@ -123,7 +122,7 @@ class Router
      */
     public function __invoke()
     {
-        if ( ! is_null($this->response)) {
+        if (! is_null($this->response)) {
             return $this->response;
         }
         $this->input->parse();
@@ -134,7 +133,7 @@ class Router
         /** @var \SplQueue $queue */
         $queue = $this->routes[$command];
         $error = true;
-        while ( ! $queue->isEmpty() && ! empty($error)) {
+        while (! $queue->isEmpty() && ! empty($error)) {
             /** @var \Toobo\SeaLion\Route\RouteInterface $route */
             /** @var mixed $handler */
             list($route, $handler) = $queue->dequeue();
@@ -165,5 +164,4 @@ class Router
     {
         return $this->errors;
     }
-
 }

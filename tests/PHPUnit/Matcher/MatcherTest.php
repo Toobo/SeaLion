@@ -19,7 +19,6 @@ use Toobo\SeaLion\Router;
  */
 class MatcherTest extends \PHPUnit_Framework_TestCase
 {
-
     private function getRoute($matcher)
     {
         /** @var \Toobo\SeaLion\Route\RouteInterface $route */
@@ -37,12 +36,12 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
                 return $key === 'opt1' && $value === 'Ok';
             },
             'opt2' => function ($value, $key) {
-                return $key === 'opt2' && (int)$value === 33;
+                return $key === 'opt2' && (int) $value === 33;
             },
         ];
         $flagsCallbacks = [
             'flag1' => function ($value, $key) {
-                return $key === 'flag1' && (bool)$value === true;
+                return $key === 'flag1' && (bool) $value === true;
             },
             'flag2' => function ($value, $key) {
                 return $key === 'flag2' && $value === 'Ok again';

@@ -1,5 +1,7 @@
 # SeaLion
 
+[![Travis CI Status](https://travis-ci.org/Toobo/SeaLion.svg?branch=master)](https://travis-ci.org/Toobo/SeaLion)
+
 -----
 
 ### Table of Contents

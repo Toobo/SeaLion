@@ -1,0 +1,38 @@
+{
+    "name": "toobo/sealion",
+    "description": "CLI Router.",
+    "keywords": [
+        "CLI",
+        "Router",
+        "Toobo"
+    ],
+    "homepage": "https://github.com/Toobo/SeaLion/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giuseppe Mazzapica",
+            "email": "giuseppe.mazzapica@gmail.com",
+            "homepage": "http://gm.zoomlab.it",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Toobo\\SeaLion\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "phpunit/phpunit": "~4.4"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}

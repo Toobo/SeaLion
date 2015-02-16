@@ -215,7 +215,8 @@ function writeLine($text) {
   fclose($f);
 }
 
-// in this trivial example we just have an array of callbacks to execute based on the command
+// In this trivial example we just have an array of callbacks
+// where the one to execute is choosed based on the route
 $handlers = [
     'handler0' => function($command, array $input) {
         writeLine('Command executed: '.$command);

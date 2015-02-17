@@ -50,19 +50,14 @@ class Matcher implements MatcherInterface
         if (empty($callbacks)) {
             return true;
         }
-        $miss = array_diff(array_keys($callbacks), array_keys($data));
-        if (! empty($miss)) {
-            $data = array_merge($data, array_combine($miss, array_fill(0, count($miss), false)));
-        }
-        $return = true;
-        while ($return && ! empty($data)) {
-            $arg = reset($data);
-            $key = key($data);
-            unset($data[$key]);
-            $return = ! isset($callbacks[$key]) || call_user_func($callbacks[$key], $arg, $key);
+        foreach ($callbacks as $key => $callback) {
+            $value = isset($data[$key]) ? $data[$key] : false;
+            if (! $callback($value, $key)) {
+                return false;
+            }
         }
 
-        return $return;
+        return true;
     }
 
     /**

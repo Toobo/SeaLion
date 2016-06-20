@@ -83,12 +83,12 @@ actually is not the option that is "long", just the literal._
 For example, typing in CLI the text:
 
 ```
-php app.php greed good morning -to="Giuseppe" --yell
+php app.php greet good morning -to="Giuseppe" --yell
 ```
 
 SeaLion will recognize:
 
- - `'greed'` as the command
+ - `'greet'` as the command
  - `'good'` and `'morning'` as two arguments
  - `'to'` as a flag with the value of `'Giuseppe'`
  - `'yell'` as an option with the value of `true`
@@ -132,7 +132,7 @@ class_alias('Toobo\SeaLion\Router', 'Router');
 
 $router = new Router();
 
-$router->addCommand('greed', 'handler0')
+$router->addCommand('greet', 'handler0')
     ->withArguments([0 => 'R{/^g[\w]+/i}', 1 => true])
     ->withFlags(['to' => 'Giuseppe']);
     ->withOptions(['yell' => function($yell) {
@@ -155,7 +155,7 @@ The expectations added above will be satisfied when:
 For example, the following input validates all the expectations above:
 
 ```
-php app.php greed --yell Good Morning -to=Giuseppe
+php app.php greet --yell Good Morning -to=Giuseppe
 ```
  
 # Handlers
@@ -385,7 +385,7 @@ Example:
 use Toobo\SeaLion\Router;
 use Toobo\SeaLion\Input\StringInput;
 
-$input = new StringInput('greed Good Morning --yell -name="Giuseppe"');
+$input = new StringInput('greet Good Morning --yell -name="Giuseppe"');
 $router = new Router($input);
 ```
 
@@ -395,7 +395,7 @@ Same result of above, can be obtained with `ArgvInput` class:
 use Toobo\SeaLion\Router;
 use Toobo\SeaLion\Input\ArgvInput;
 
-$input = new ArgvInput(['greed', 'Good', 'Morning', '--yell', '-name="Giuseppe"']);
+$input = new ArgvInput(['greet', 'Good', 'Morning', '--yell', '-name="Giuseppe"']);
 $router = new Router($input);
 ```
 
